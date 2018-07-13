@@ -19,8 +19,8 @@ resource "openstack_networking_floatingip_v2" "fip_1" {
 }
 
 resource "openstack_compute_floatingip_associate_v2" "fip_1" {
-  floating_ip = "${element(openstack_networking_floatingip_v2.fip_1.*.address, count.index)}"
-  instance_id = "${element(module.instance-common.instance, count.index)}"
+  floating_ip = "${openstack_networking_floatingip_v2.fip_1.*.address[count.index]}"
+  instance_id = "${module.instance-common.instance[count.index]}"
   count = "${var.count-fip}"
   # FIXME: should be uncomented when provider openstack changes to > 1.5
   # wait_until_associated = true

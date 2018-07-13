@@ -19,7 +19,7 @@ resource "flexibleengine_networking_floatingip_v2" "fip_1" {
 }
 
 resource "flexibleengine_compute_floatingip_associate_v2" "fip_1" {
-  floating_ip = "${element(flexibleengine_networking_floatingip_v2.fip_1.*.address, count.index)}"
-  instance_id = "${element(module.instance-common.instance, count.index)}"
+  floating_ip = "${flexibleengine_networking_floatingip_v2.fip_1.*.address[count.index]}"
+  instance_id = "${module.instance-common.instance[count.index]}"
   count = "${var.count-fip}"
 }
