@@ -11,6 +11,8 @@ module "instance-common" {
   volume-size = "${var.volume-size}"
   security-groups = "${var.security-groups}"
   user-data = "${var.user-data}"
+  instance-az = "${var.instance-az}"
+  volume-az = "${var.volume-az}"
 }
 
 resource "flexibleengine_networking_floatingip_v2" "fip_1" {

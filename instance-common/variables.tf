@@ -23,3 +23,13 @@ variable "instance-name" {}
 variable "user-data" {
   description = "Send user-data to instance for additional configuration."
 }
+
+variable "instance-az" {
+  description = "Instance availability zone."
+  default = ""
+}
+
+variable "volume-az" {
+  description = "Volume availability zone."
+  default = ""
+}

@@ -54,3 +54,13 @@ variable "user-data" {
   description = "The user-data configuration passed to instance for additional configuration."
   default = "#cloud-config\n"
 }
+
+variable "instance-az" {
+  description = "Instance availability zone."
+  default = ""
+}
+
+variable "volume-az" {
+  description = "Volume availability zone."
+  default = ""
+}

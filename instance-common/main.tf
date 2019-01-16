@@ -6,6 +6,7 @@ resource "openstack_blockstorage_volume_v2" "instance-vol1" {
   size        = "${var.volume-size}"
   image_id    = "${var.image-id}"
   volume_type = "${var.volume-type}"
+  availability_zone = "${var.volume-az}"
 }
 
 # Create an instance
@@ -16,6 +17,7 @@ resource "openstack_compute_instance_v2" "instance" {
   key_pair        = "${var.keypair}"
   security_groups = "${var.security-groups}"
   user_data	  = "${var.user-data}"
+  availability_zone = "${var.instance-az}"
 
   block_device {
     uuid		  = "${openstack_blockstorage_volume_v2.instance-vol1.*.id[count.index]}"
