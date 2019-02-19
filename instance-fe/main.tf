@@ -2,6 +2,7 @@
 module "instance-common" {
   source = "../instance-common"
   instance-name = "${var.instance-name}"
+  instance-domain = "${var.instance-domain}"
   count = "${var.count}"
   image-id = "${var.image-id}"
   keypair = "${var.keypair}"

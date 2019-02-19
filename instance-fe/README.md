@@ -18,6 +18,7 @@ See [examples](../examples/) for basic usage.
 * `flavor-name` - OpenStack flavor name for created server (default = `"m1.small"`).
 * `volume-type` - Glance volume type (default = `"SATA"`).
 * `instance-name` - Server name. If will be suffixed by `-<count_number>`.
+* `instance-domain` - Instance domain (default empty, use in form `".domain"`).
 * `user-data` - The user-data configuration passed to instance for additional configuration (default = `"#cloud-config\n"` aka do nothing).
 * `instance-az` - Server availability zone (default empty, so platform deault will be used).
 * `volume-az` - Volume availability zone (default empty, so platform deault will be used).

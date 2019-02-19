@@ -1,7 +1,7 @@
 # Server volume
 resource "openstack_blockstorage_volume_v2" "instance-vol1" {
   count	      = "${var.count}"
-  name        = "${var.instance-name}-${count.index}"
+  name        = "${var.instance-name}-${count.index}${var.instance-domain}"
   description = "server boot volume"
   size        = "${var.volume-size}"
   image_id    = "${var.image-id}"

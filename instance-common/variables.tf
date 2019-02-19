@@ -19,7 +19,12 @@ variable "flavor-name" {
   default = "m1.small"
 }
 variable "volume-type" {}
+
 variable "instance-name" {}
+variable "instance-domain" {
+  description = "Server domain. Use in form: '.domain'."
+}
+
 variable "user-data" {
   description = "Send user-data to instance for additional configuration."
 }

@@ -50,6 +50,11 @@ variable "instance-name" {
   description = "Server name. If will be suffixed by -<number>."
 }
 
+variable "instance-domain" {
+  description = "Server domain. Use in form: '.domain'."
+  default = ""
+}
+
 variable "user-data" {
   description = "The user-data configuration passed to instance for additional configuration."
   default = "#cloud-config\n"
